@@ -19,6 +19,7 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.compose.ui.res.stringResource
+import com.ziaafridi.notifyvault.R
 //import com.ziaafridi.notifyvault.isAppSideloaded
 
 @Composable
