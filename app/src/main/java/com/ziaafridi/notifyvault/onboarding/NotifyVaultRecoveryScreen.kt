@@ -22,9 +22,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
+import com.ziaafridi.notifyvault.R
 
 @Composable
-fun RWDMRecoveryScreen(
+fun NotifyVaultRecoveryScreen(
     onComplete: () -> Unit
 ) {
     val context = LocalContext.current
@@ -66,7 +67,7 @@ fun RWDMRecoveryScreen(
 
         // Receive a message
         Text(
-            text = context.getString(R.string.onboarding_rwdm_step1),
+            text = context.getString(R.string.onboarding_notifyvault_step1),
             fontSize = 18.sp,
             fontWeight = FontWeight.Medium,
             color = Color.White,
@@ -85,7 +86,7 @@ fun RWDMRecoveryScreen(
 
         // Message gets deleted
         Text(
-            text = context.getString(R.string.onboarding_rwdm_step2),
+            text = context.getString(R.string.onboarding_notifyvault_step2),
             fontSize = 18.sp,
             fontWeight = FontWeight.Medium,
             color = Color.White,
@@ -102,9 +103,9 @@ fun RWDMRecoveryScreen(
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // rwdm recovers it
+        // notifyvault recovers it
         Text(
-            text = context.getString(R.string.onboarding_rwdm_step3),
+            text = context.getString(R.string.onboarding_notifyvault_step3),
             fontSize = 18.sp,
             fontWeight = FontWeight.Medium,
             color = Color.White,
@@ -113,8 +114,8 @@ fun RWDMRecoveryScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // RWDM recovery notification card
-        RWDMRecoveryCard()
+        // notifyvault recovery notification card
+        notifyvaultRecoveryCard()
 
         Spacer(modifier = Modifier.weight(1f))
 
@@ -136,7 +137,7 @@ fun RWDMRecoveryScreen(
             shape = RoundedCornerShape(12.dp)
         ) {
             Text(
-                text = context.getString(R.string.onboarding_rwdm_grant_permission),
+                text = context.getString(R.string.onboarding_notifyvault_grant_permission),
                 fontSize = 16.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = Color.Black
@@ -249,7 +250,7 @@ private fun MessageNotificationCard(
 }
 
 @Composable
-private fun RWDMRecoveryCard() {
+private fun notifyvaultRecoveryCard() {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = Color.White),
@@ -261,7 +262,7 @@ private fun RWDMRecoveryCard() {
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // RWDM icon
+            // notifyvault icon
             Text(
                 text = "🔍",
                 fontSize = 24.sp
@@ -274,7 +275,7 @@ private fun RWDMRecoveryCard() {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = stringResource(R.string.onboarding_placeholder_rwdm),
+                        text = stringResource(R.string.onboarding_placeholder_notifyvault),
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Medium,
                         color = Color.Gray
@@ -322,7 +323,7 @@ private fun NotificationPermissionDialog(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = context.getString(R.string.onboarding_rwdm_notification_title),
+                    text = context.getString(R.string.onboarding_notifyvault_notification_title),
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Medium,
                     color = Color.White,
@@ -340,7 +341,7 @@ private fun NotificationPermissionDialog(
                 shape = RoundedCornerShape(12.dp)
             ) {
                 Text(
-                    text = context.getString(R.string.onboarding_rwdm_allow),
+                    text = context.getString(R.string.onboarding_notifyvault_allow),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = Color.White
@@ -357,7 +358,7 @@ private fun NotificationPermissionDialog(
                 shape = RoundedCornerShape(12.dp)
             ) {
                 Text(
-                    text = context.getString(R.string.onboarding_rwdm_dont_allow),
+                    text = context.getString(R.string.onboarding_notifyvault_dont_allow),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = Color.White
