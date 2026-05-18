@@ -11,10 +11,10 @@ val termsOfUseData = buildAnnotatedString {
 //        append("TERMS OF USE\n")
 //    }
     withStyle(style = SpanStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp)) {
-        append("Reveal WhatsApp Messages\n")
+        append("Notify Vault\n")
     }
     append("By accessing and using this service, you accept and agree to be bound by the terms and provisions of this agreement. In addition, when using this service, you shall be subject to any posted guidelines or rules applicable to such services. Any participation in this service will constitute acceptance of this agreement. If you do not agree to abide by the above, please do not use this service.\n")
-    append("Reveal WhatsApp Messages (also referred to as “the App” or “the Service”) is developed and maintained by the Service Owners (also referred to as “Developers” or “Authors”) as an ad-supported application. This Service is provided to users on an “AS IS” and “AS AVAILABLE” basis, without any warranties of any kind, either express or implied.\n")
+    append("Notify Vault (also referred to as “the App” or “the Service”) is developed and maintained by the Service Owners (also referred to as “Developers” or “Authors”) as an ad-supported application. This Service is provided to users on an “AS IS” and “AS AVAILABLE” basis, without any warranties of any kind, either express or implied.\n")
     append("The Developers do not guarantee the correct, complete, or uninterrupted behavior of the App under any circumstances. The App depends on system notifications and device behavior, and therefore message recovery may not always be accurate or complete.\n")
     append("In no event shall the Developers be liable for any direct, indirect, incidental, special, or consequential damages, whether physical or not, arising out of the use or inability to use the Service.\n")
     append("The User shall be considered solely responsible for their actions and for any consequences arising from the usage of this Service.\n\n")
