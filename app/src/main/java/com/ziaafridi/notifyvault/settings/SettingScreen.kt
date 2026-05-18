@@ -100,14 +100,15 @@ fun SettingScreen(
                     }
                 }
 
-//                item {
-//                    SettingsSection {
-//                        SettingsItem(
-//                            icon = painterResource(R.drawable.info),
-//                            title = stringResource(R.string.about),
-//                            description = stringResource(R.string.about_subtitle),
-//                        ) { onAboutClick() }
-//
+                item {
+                    SettingsSection {
+                        SettingsItem(
+                            icon = painterResource(R.drawable.info),
+                            title = stringResource(R.string.about),
+                            description = stringResource(R.string.about_subtitle),
+                            showDivider = false,
+                        ) { onAboutClick() }
+
 //                        SettingsItem(
 //                            icon = painterResource(R.drawable.rating),
 //                            title = stringResource(R.string.rate_us),
@@ -135,8 +136,8 @@ fun SettingScreen(
 //                            }
 //                            context.startActivity(intent)
 //                        }
-//                    }
-//                }
+                    }
+                }
 
                 item {
                     SettingsSection {
