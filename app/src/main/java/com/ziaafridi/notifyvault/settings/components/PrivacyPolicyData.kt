@@ -11,15 +11,15 @@ val privacyPolicyData = buildAnnotatedString {
 //        append("PRIVACY POLICY\n")
 //    }
     withStyle(style = SpanStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp)) {
-        append("Reveal WhatsApp Messages\n")
+        append("Notify Vault\n")
     }
-    append("In this Privacy Policy (\"Policy\"), we, the Developers, describe how we collect, use, and protect information obtained from users of the Reveal WhatsApp Messages app (the “App”) and its services (collectively, the “Services”).\n")
+    append("In this Privacy Policy (\"Policy\"), we, the Developers, describe how we collect, use, and protect information obtained from users of the Notify Vault app (the “App”) and its services (collectively, the “Services”).\n")
     append("If you choose to use this Service, you agree to the collection and use of information in relation to this Policy. Any information collected is used solely for providing and improving the Service and will not be shared with anyone except as described in this Privacy Policy.\n")
     append("By using the App or any of our Services, you agree that your information will be handled as described in this Policy. Your use of our App and any dispute over privacy is subject to this Policy and our Terms of Use.\n")
     append("The terms used in this Privacy Policy have the same meanings as in the Terms of Use unless otherwise defined.\n\n")
 
     withStyle(style = SpanStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp)) {
-        append("Data Collected by Reveal WhatsApp Messages\n")
+        append("Data Collected by Notify Vault\n")
     }
     append("The Service provides the ability to retrieve chat messages (text and limited metadata) that may disappear for any reason, through a local notification-based backup mechanism.\n\n")
     withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
