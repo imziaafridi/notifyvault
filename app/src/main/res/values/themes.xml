@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources>
+
+    <style name="Theme.RevealWhatsappMessages" parent="Theme.Material3.Light.NoActionBar" />
+
+    <style name="Theme.App.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/reveal_whastapp_message_icon</item>
+        <item name="windowSplashScreenIconBackgroundColor">#02642A</item>
+        <item name="postSplashScreenTheme">@style/Theme.RevealWhatsappMessages</item>
+
+    </style>
+</resources>
