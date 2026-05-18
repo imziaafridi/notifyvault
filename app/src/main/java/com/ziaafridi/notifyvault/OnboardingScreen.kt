@@ -16,7 +16,7 @@ fun OnboardingScreen(
         1 -> PermissionsScreen(
             onComplete = { currentStep = 2 }
         )
-        2 -> RWDMRecoveryScreen(
+        2 -> NotifyVaultRecoveryScreen(
             onComplete = { currentStep = 3 }
         )
         3 -> RememberScreen(
