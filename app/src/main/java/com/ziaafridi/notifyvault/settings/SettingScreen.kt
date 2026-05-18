@@ -84,10 +84,10 @@ fun SettingScreen(
                         ) {
                             val intent = Intent(Intent.ACTION_SENDTO).apply {
                                 data = Uri.parse("mailto:")
-                                putExtra(Intent.EXTRA_EMAIL, arrayOf("info@thepenguin.tech"))
+                                putExtra(Intent.EXTRA_EMAIL, arrayOf("imziaafridi"))
                                 putExtra(
                                     Intent.EXTRA_SUBJECT,
-                                    "Reveal Whatsapp Messages contact support",
+                                    "Notify Vault contact support",
                                 )
                             }
                             context.startActivity(
@@ -100,43 +100,43 @@ fun SettingScreen(
                     }
                 }
 
-                item {
-                    SettingsSection {
-                        SettingsItem(
-                            icon = painterResource(R.drawable.info),
-                            title = stringResource(R.string.about),
-                            description = stringResource(R.string.about_subtitle),
-                        ) { onAboutClick() }
-
-                        SettingsItem(
-                            icon = painterResource(R.drawable.rating),
-                            title = stringResource(R.string.rate_us),
-                            description = stringResource(R.string.support_us_on_playstore),
-                        ) {
-                            val appDetail =
-                                "https://play.google.com/store/apps/details?id=$appPackageName"
-                            val intent = Intent(Intent.ACTION_VIEW, appDetail.toUri()).apply {
-                                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                            }
-                            context.startActivity(intent)
-                        }
-
-                        SettingsItem(
-                            icon = painterResource(R.drawable.external_link),
-                            title = stringResource(R.string.more_apps_by_dev),
-                            description = stringResource(R.string.discover_more_apps_on_playstore),
-                            showDivider = false,
-                        ) {
-                            val developerId = "4817776406979722087"
-                            val developerPage =
-                                "https://play.google.com/store/apps/dev?id=$developerId"
-                            val intent = Intent(Intent.ACTION_VIEW, developerPage.toUri()).apply {
-                                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                            }
-                            context.startActivity(intent)
-                        }
-                    }
-                }
+//                item {
+//                    SettingsSection {
+//                        SettingsItem(
+//                            icon = painterResource(R.drawable.info),
+//                            title = stringResource(R.string.about),
+//                            description = stringResource(R.string.about_subtitle),
+//                        ) { onAboutClick() }
+//
+//                        SettingsItem(
+//                            icon = painterResource(R.drawable.rating),
+//                            title = stringResource(R.string.rate_us),
+//                            description = stringResource(R.string.support_us_on_playstore),
+//                        ) {
+//                            val appDetail =
+//                                "https://play.google.com/store/apps/details?id=$appPackageName"
+//                            val intent = Intent(Intent.ACTION_VIEW, appDetail.toUri()).apply {
+//                                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//                            }
+//                            context.startActivity(intent)
+//                        }
+//
+//                        SettingsItem(
+//                            icon = painterResource(R.drawable.external_link),
+//                            title = stringResource(R.string.more_apps_by_dev),
+//                            description = stringResource(R.string.discover_more_apps_on_playstore),
+//                            showDivider = false,
+//                        ) {
+//                            val developerId = "123482368683246342"
+//                            val developerPage =
+//                                "https://play.google.com/store/apps/dev?id=$developerId"
+//                            val intent = Intent(Intent.ACTION_VIEW, developerPage.toUri()).apply {
+//                                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//                            }
+//                            context.startActivity(intent)
+//                        }
+//                    }
+//                }
 
                 item {
                     SettingsSection {
@@ -144,14 +144,18 @@ fun SettingScreen(
                             icon = painterResource(R.drawable.privacy),
                             title = stringResource(R.string.privacy_policy),
                             description = stringResource(R.string.read_our_privacy_policy),
-                        ) { onPrivacyPolicyClick() }
+                        ) {
+//                            onPrivacyPolicyClick()
+                        }
 
                         SettingsItem(
                             icon = painterResource(R.drawable.terms_of_use),
                             title = stringResource(R.string.terms_of_use),
                             description = stringResource(R.string.read_our_terms_of_use),
                             showDivider = false,
-                        ) { onTermsClick() }
+                        ) {
+//                            onTermsClick()
+                        }
                     }
                 }
 
