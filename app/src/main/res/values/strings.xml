@@ -111,10 +111,12 @@
     <string name="your_privacy_is_our_priority">Your Privacy is Our Priority</string>
     <string name="about_privacy_description">We believe your data belongs to you. This app is designed to work entirely on your device without sending your personal information anywhere else.</string>
     <string name="about_data_storage_title">How Your Data is Stored</string>
-    <string name="about_data_point_1">🔒 All recovered messages are stored locally on your device only.</string>
-    <string name="about_data_point_2">☁️ Your data is never uploaded to any cloud or external servers.</string>
-    <string name="about_data_point_3">🚫 No third party can access your recovered messages.</string>
-    <string name="about_data_point_4">🗑️ If you uninstall the app, all its data is permanently deleted from your device.</string>
+    <string name="about_data_point_1">All recovered messages are stored locally on your device only.</string>
+    <string name="about_data_point_2">Your data is never uploaded to any cloud or external servers.</string>
+    <string name="about_data_point_3">No third party can access your recovered messages.</string>
+    <string name="about_data_point_4">If you uninstall the app, all its data is permanently deleted from your device.</string>
+    <string name="about_section_privacy">Privacy commitment</string>
+    <string name="about_section_data">How your data is stored</string>
 
     <!-- MORE APPS BY DEV SECTION -->
     <string name="more_apps_by_dev">More Apps By Developer</string>
