@@ -131,9 +131,8 @@ private fun AboutAppHeader() {
             tonalElevation = 0.dp,
         ) {
             Box(contentAlignment = Alignment.Center) {
-                // Use a drawable — adaptive mipmap icons crash with painterResource in Compose.
                 Image(
-                    painter = painterResource(R.drawable.ic_launcher_foreground),
+                    painter = painterResource(R.drawable.ic_splash_logo),
                     contentDescription = null,
                     modifier = Modifier.size(56.dp),
                     contentScale = ContentScale.Fit,
