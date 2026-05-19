@@ -179,7 +179,7 @@ private fun PrivacyCommitmentCard() {
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(18.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.35f),
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
     ) {

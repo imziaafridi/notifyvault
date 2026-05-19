@@ -45,7 +45,7 @@ fun SettingsItem(
                 modifier = Modifier
                     .height(40.dp)
                     .clip(RoundedCornerShape(10.dp))
-                    .background(MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.65f))
+                    .background(MaterialTheme.colorScheme.primaryContainer)
                     .padding(8.dp),
             )
 

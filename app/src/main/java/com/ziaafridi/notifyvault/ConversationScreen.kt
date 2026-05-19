@@ -44,6 +44,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.ziaafridi.notifyvault.ui.MediaViewer
+import com.ziaafridi.notifyvault.ui.theme.VaultTheme
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -108,16 +109,15 @@ fun ConversationScreen(
                             }
                         }
                     },
-                    colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.primaryContainer
-                    )
+                    colors = VaultTheme.topAppBarSurfaceColors(),
                 )
             } else {
                 TopAppBar(
                     title = {
                         Text(
                             text = conversationName,
-                            maxLines = 1
+                            maxLines = 1,
+                            style = MaterialTheme.typography.titleLarge,
                         )
                     },
                     navigationIcon = {
@@ -129,10 +129,11 @@ fun ConversationScreen(
                         IconButton(onClick = { showDeleteConversationDialog = true }) {
                             Icon(
                                 Icons.Default.DeleteForever,
-                                contentDescription = "Delete conversation"
-                            ) // Using DeleteForever instead of DeleteSweep
+                                contentDescription = "Delete conversation",
+                            )
                         }
-                    }
+                    },
+                    colors = VaultTheme.topAppBarColors(),
                 )
             }
         }

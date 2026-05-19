@@ -9,7 +9,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -18,6 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ziaafridi.notifyvault.R
+import com.ziaafridi.notifyvault.ui.theme.VaultTheme
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
@@ -25,7 +25,7 @@ fun TopBarWidget(
     onBackClick: (() -> Unit)? = null,
     text: String,
     size: Int = 20,
-    weight: FontWeight = FontWeight.SemiBold,
+    weight: FontWeight = FontWeight.Medium,
     alignment: TextAlign = TextAlign.Start,
     startPadding: Int = 0,
 ) {
@@ -34,10 +34,11 @@ fun TopBarWidget(
             Text(
                 modifier = Modifier.padding(start = startPadding.dp),
                 text = text,
-                fontSize = size.sp,
-                fontWeight = weight,
+                style = MaterialTheme.typography.titleLarge.copy(
+                    fontSize = size.sp,
+                    fontWeight = weight,
+                ),
                 textAlign = alignment,
-                style = MaterialTheme.typography.titleLarge,
             )
         },
         navigationIcon = {
@@ -46,14 +47,10 @@ fun TopBarWidget(
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = stringResource(R.string.navigate_back_des),
-                        tint = MaterialTheme.colorScheme.onSurface,
                     )
                 }
             }
         },
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.surface,
-            titleContentColor = MaterialTheme.colorScheme.onSurface,
-        ),
+        colors = VaultTheme.topAppBarColors(),
     )
 }

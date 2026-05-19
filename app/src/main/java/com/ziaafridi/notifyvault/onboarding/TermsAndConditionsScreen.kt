@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import com.ziaafridi.notifyvault.R
 import com.ziaafridi.notifyvault.settings.components.privacyPolicyData
 import com.ziaafridi.notifyvault.settings.components.termsOfUseData
+import com.ziaafridi.notifyvault.ui.theme.VaultTheme
 
 @Composable
 fun TermsAndConditionsScreen(
@@ -117,9 +118,7 @@ fun TermsAndConditionsScreen(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(56.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.primary
-            ),
+            colors = VaultTheme.primaryButtonColors(),
             shape = RoundedCornerShape(12.dp)
         ) {
             Text(
@@ -158,7 +157,7 @@ private fun PolicyDialog(
             )
         },
         confirmButton = {
-            TextButton(onClick = onDismiss) {
+            TextButton(onClick = onDismiss, colors = VaultTheme.textButtonColors()) {
                 Text(stringResource(android.R.string.ok))
             }
         }

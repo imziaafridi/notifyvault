@@ -43,6 +43,7 @@ import com.ziaafridi.notifyvault.settings.sections.PrivacyPolicyScreen
 import com.ziaafridi.notifyvault.settings.SettingScreen
 import com.ziaafridi.notifyvault.settings.sections.TermsOfUseScreen
 import com.ziaafridi.notifyvault.ui.theme.NotifyVaultTheme
+import com.ziaafridi.notifyvault.ui.theme.VaultTheme
 import android.net.Uri
 
 class MainActivity : ComponentActivity() {
@@ -227,7 +228,8 @@ fun PermissionScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),
-                shape = MaterialTheme.shapes.medium
+                shape = MaterialTheme.shapes.medium,
+                colors = VaultTheme.primaryButtonColors(),
             ) {
                 Text(
                     text = stringResource(R.string.grant_permission),

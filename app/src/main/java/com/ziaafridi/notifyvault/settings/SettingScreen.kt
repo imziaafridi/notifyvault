@@ -35,6 +35,7 @@ import com.ziaafridi.notifyvault.R
 import com.ziaafridi.notifyvault.settings.components.SettingsItem
 import com.ziaafridi.notifyvault.settings.components.SettingsSection
 import com.ziaafridi.notifyvault.settings.components.TopBarWidget
+import com.ziaafridi.notifyvault.ui.theme.VaultTheme
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -146,6 +147,7 @@ fun SettingScreen(
             text = { Text(text = stringResource(R.string.delete_all_data_confirm_message)) },
             confirmButton = {
                 TextButton(
+                    colors = VaultTheme.textButtonColors(),
                     onClick = {
                         showDeleteAllDataDialog = false
                         viewModel.clearAllData {

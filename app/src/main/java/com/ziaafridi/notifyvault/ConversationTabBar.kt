@@ -22,6 +22,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
+import androidx.compose.material3.TabRowDefaults
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -35,6 +37,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.ziaafridi.notifyvault.ui.DisplayDateBadge
+import com.ziaafridi.notifyvault.ui.theme.VaultTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -107,10 +110,25 @@ fun ConversationTabBar(
     }
 
     Column(modifier = Modifier.fillMaxWidth()) {
-        TabRow(selectedTabIndex = pagerState.currentPage) {
+        TabRow(
+            selectedTabIndex = pagerState.currentPage,
+            containerColor = VaultTheme.tabRowContainerColor(),
+            contentColor = MaterialTheme.colorScheme.onSurface,
+            indicator = { tabPositions ->
+                TabRowDefaults.SecondaryIndicator(
+                    modifier = Modifier.tabIndicatorOffset(tabPositions[pagerState.currentPage]),
+                    color = VaultTheme.tabRowIndicatorColor(),
+                )
+            },
+        ) {
             tabs.forEachIndexed { index, title ->
                 Tab(
-                    text = { Text(title) },
+                    text = {
+                        Text(
+                            text = title,
+                            style = MaterialTheme.typography.labelLarge,
+                        )
+                    },
                     selected = pagerState.currentPage == index,
                     onClick = {
                         scope.launch {

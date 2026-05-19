@@ -55,6 +55,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ziaafridi.notifyvault.ui.DisplayDateBadge
+import com.ziaafridi.notifyvault.ui.theme.VaultTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.filter
@@ -295,22 +296,22 @@ fun MessageDetailScreen(conversationId: String, sender: String, onBack: () -> Un
                             }
                         }
                     },
-                    colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.primaryContainer
-                    )
+                    colors = VaultTheme.topAppBarSurfaceColors(),
                 )
             } else {
                 TopAppBar(
                     title = {
-                        Text(sender, fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
+                        Text(
+                            sender,
+                            style = MaterialTheme.typography.titleLarge,
+                        )
                     },
                     navigationIcon = {
                         IconButton(onClick = onBack) {
                             Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                         }
                     },
-                    actions = {
-                    }
+                    colors = VaultTheme.topAppBarColors(),
                 )
             }
 
@@ -400,7 +401,10 @@ fun MessageDetailScreen(conversationId: String, sender: String, onBack: () -> Un
                             exitSelectionMode()
                         }
                     },
-                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.error,
+                        contentColor = MaterialTheme.colorScheme.onError,
+                    )
                 ) {
                     Text(stringResource(R.string.delete))
                 }
@@ -424,11 +428,10 @@ private fun MessageBubbleWithSelection(
     onLongPress: () -> Unit = {}
 ) {
     val contentAlpha = if (message.isDeleted) 0.6f else 1.0f
-    val backgroundColor = when {
-        isSelected -> MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 1.0f)
-        message.isDeleted -> MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.9f) // Bold Red/Pink
-        else -> MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 1.0f) // Solid gray/blue
-    }
+    val backgroundColor = VaultTheme.messageBubbleColor(
+        isDeleted = message.isDeleted,
+        isSelected = isSelected,
+    )
     Row(
         modifier = Modifier
             .fillMaxWidth()

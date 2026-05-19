@@ -62,7 +62,7 @@ fun ConversationItem(
         modifier = Modifier
             .fillMaxWidth()
             .background(
-                if (isSelected) MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.55f)
+                if (isSelected) MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.85f)
                 else Color.Transparent
             )
             .combinedClickable(onClick = onClick, onLongClick = onLongClick)

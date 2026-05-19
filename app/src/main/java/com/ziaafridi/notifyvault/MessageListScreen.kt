@@ -7,6 +7,7 @@ import androidx.compose.material.icons.filled.SelectAll
 import androidx.compose.material.icons.filled.Share
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -59,6 +60,7 @@ import com.ziaafridi.notifyvault.onboarding.getWhatsAppFolderUri
 import com.ziaafridi.notifyvault.onboarding.hasMediaFolderAccess
 import com.ziaafridi.notifyvault.onboarding.isNotificationServiceEnabled
 import com.ziaafridi.notifyvault.ui.ServiceHealthBanner
+import com.ziaafridi.notifyvault.ui.theme.VaultTheme
 import kotlinx.coroutines.launch
 import androidx.core.content.FileProvider
 import android.content.ContentValues
@@ -134,9 +136,11 @@ fun ConversationListScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background),
     ) {
         if (isAttachmentSelectionMode) {
             TopAppBar(
+                colors = VaultTheme.topAppBarSurfaceColors(),
                 title = { Text("${selectedAttachmentIds.size}") },
                 navigationIcon = {
                     IconButton(
@@ -207,6 +211,7 @@ fun ConversationListScreen(navController: NavHostController) {
             )
         } else if (isConversationSelectionMode) {
             TopAppBar(
+                colors = VaultTheme.topAppBarSurfaceColors(),
                 title = { Text("${selectedConversationIds.size}") },
                 navigationIcon = {
                     IconButton(
@@ -257,8 +262,7 @@ fun ConversationListScreen(navController: NavHostController) {
                 title = {
                     Text(
                         stringResource(R.string.notification_access_display_name),
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.SemiBold
+                        style = MaterialTheme.typography.titleLarge,
                     )
                 },
                 actions = {
@@ -271,10 +275,10 @@ fun ConversationListScreen(navController: NavHostController) {
                         Icon(
                             imageVector = Icons.Default.Settings,
                             contentDescription = stringResource(R.string.setting_des),
-                            tint = MaterialTheme.colorScheme.onSurface,
                         )
                     }
-                }
+                },
+                colors = VaultTheme.topAppBarColors(),
             )
         }
 
