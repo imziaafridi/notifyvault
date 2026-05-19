@@ -9,13 +9,14 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.ziaafridi.notifyvault.R
+import com.ziaafridi.notifyvault.ui.theme.OnboardingGradients
+import com.ziaafridi.notifyvault.ui.theme.onboardingMutedOnGradient
+import com.ziaafridi.notifyvault.ui.theme.onboardingOnGradient
 
 @Composable
 fun RememberScreen(
@@ -23,97 +24,69 @@ fun RememberScreen(
 ) {
     val context = LocalContext.current
     val scrollState = rememberScrollState()
-    
+
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                brush = androidx.compose.ui.graphics.Brush.verticalGradient(
-                    colors = listOf(
-                        Color(0xFF8B0000), // Dark red at top
-                        Color(0xFF4A0000)  // Darker red at bottom
-                    )
-                )
-            )
+            .background(OnboardingGradients.primary())
             .padding(24.dp)
             .verticalScroll(scrollState),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Spacer(modifier = Modifier.height(80.dp))
-        
-        // Title
+
         Text(
             text = context.getString(R.string.onboarding_remember_title),
-            fontSize = 32.sp,
+            style = MaterialTheme.typography.headlineSmall,
             fontWeight = FontWeight.Bold,
-            color = Color.White,
-            textAlign = TextAlign.Center
+            color = onboardingOnGradient(),
+            textAlign = TextAlign.Center,
         )
-        
+
         Spacer(modifier = Modifier.height(60.dp))
-        
-        // First disclaimer
+
         Text(
             text = context.getString(R.string.onboarding_remember_silenced_chat),
-            fontSize = 16.sp,
-            color = Color.White,
+            style = MaterialTheme.typography.bodyLarge,
+            color = onboardingMutedOnGradient(),
             textAlign = TextAlign.Center,
-            lineHeight = 24.sp,
-            modifier = Modifier.padding(horizontal = 8.dp)
+            modifier = Modifier.padding(horizontal = 8.dp),
         )
-        
+
         Spacer(modifier = Modifier.height(40.dp))
-        
-        // Second disclaimer
+
         Text(
             text = context.getString(R.string.onboarding_remember_before_install),
-            fontSize = 16.sp,
-            color = Color.White,
+            style = MaterialTheme.typography.bodyLarge,
+            color = onboardingMutedOnGradient(),
             textAlign = TextAlign.Center,
-            lineHeight = 24.sp,
-            modifier = Modifier.padding(horizontal = 8.dp)
+            modifier = Modifier.padding(horizontal = 8.dp),
         )
-        
-        Spacer(modifier = Modifier.weight(1f))
-        
-        // Get Started button
+
+        Spacer(modifier = Modifier.height(48.dp))
+
         Button(
             onClick = onComplete,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(56.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color.White
+                containerColor = MaterialTheme.colorScheme.surface,
+                contentColor = MaterialTheme.colorScheme.primary,
             ),
-            shape = RoundedCornerShape(12.dp)
+            shape = RoundedCornerShape(12.dp),
         ) {
             Text(
                 text = context.getString(R.string.onboarding_get_started),
-                fontSize = 16.sp,
+                style = MaterialTheme.typography.labelLarge,
                 fontWeight = FontWeight.SemiBold,
-                color = Color.Black
             )
         }
-        
+
         Spacer(modifier = Modifier.height(24.dp))
-        
-        // Navigation dots
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            repeat(7) { index ->
-                Box(
-                    modifier = Modifier
-                        .size(8.dp)
-                        .background(
-                            if (index == 3) Color.White else Color.White.copy(alpha = 0.3f),
-                            RoundedCornerShape(4.dp)
-                        )
-                )
-            }
-        }
-        
+
+        NavigationDots(currentStep = 3)
+
         Spacer(modifier = Modifier.height(24.dp))
     }
 }

@@ -21,6 +21,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.AlertDialog
@@ -255,7 +256,7 @@ fun ConversationListScreen(navController: NavHostController) {
             TopAppBar(
                 title = {
                     Text(
-                        stringResource(R.string.rwm_disp_name),
+                        stringResource(R.string.notification_access_display_name),
                         fontSize = 20.sp,
                         fontWeight = FontWeight.SemiBold
                     )
@@ -268,8 +269,9 @@ fun ConversationListScreen(navController: NavHostController) {
                         onClick = { navController.navigate("settings") }
                     ) {
                         Icon(
-                            painterResource(R.drawable.setting),
+                            imageVector = Icons.Default.Settings,
                             contentDescription = stringResource(R.string.setting_des),
+                            tint = MaterialTheme.colorScheme.onSurface,
                         )
                     }
                 }
@@ -299,7 +301,7 @@ fun ConversationListScreen(navController: NavHostController) {
         if (conversations.isEmpty()) {
             EmptyStateScreen()
         } else {
-            RWDMTabBar(
+            ConversationTabBar(
                 conversationList = conversations,
                 // Attachments tab should show all media messages, not only the latest per conversation.
                 mediaList = allMedia,

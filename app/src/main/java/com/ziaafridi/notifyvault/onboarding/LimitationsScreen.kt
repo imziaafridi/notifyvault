@@ -7,109 +7,68 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.ziaafridi.notifyvault.R
+import com.ziaafridi.notifyvault.ui.theme.OnboardingGradients
+import com.ziaafridi.notifyvault.ui.theme.onboardingMutedOnGradient
+import com.ziaafridi.notifyvault.ui.theme.onboardingOnGradient
 
 @Composable
 fun LimitationsScreen(
     onComplete: () -> Unit
 ) {
-    val context = LocalContext.current
-    
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                brush = androidx.compose.ui.graphics.Brush.verticalGradient(
-                    colors = listOf(
-                        Color(0xFF2E5266), // Blue-gray at top
-                        Color(0xFF1A3A4A)  // Darker blue-gray at bottom
-                    )
-                )
-            )
+            .background(OnboardingGradients.deep())
             .padding(24.dp)
             .verticalScroll(rememberScrollState()),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally,
     ) {
         Spacer(modifier = Modifier.height(60.dp))
-        
-        // Title
+
         Text(
-            text = context.getString(R.string.onboarding_limitations_title),
-            fontSize = 28.sp,
+            text = stringResource(R.string.onboarding_limitations_title),
+            style = MaterialTheme.typography.headlineSmall,
             fontWeight = FontWeight.Bold,
-            color = Color.White,
-            textAlign = TextAlign.Center
+            color = onboardingOnGradient(),
+            textAlign = TextAlign.Center,
         )
-        
+
         Spacer(modifier = Modifier.height(40.dp))
-        
-        // First limitation
-        LimitationCard(
-            text = context.getString(R.string.onboarding_limitations_offline)
-        )
-        
+
+        LimitationCard(text = stringResource(R.string.onboarding_limitations_offline))
         Spacer(modifier = Modifier.height(20.dp))
-        
-        // Second limitation
-        LimitationCard(
-            text = context.getString(R.string.onboarding_limitations_wifi)
-        )
-        
+        LimitationCard(text = stringResource(R.string.onboarding_limitations_wifi))
         Spacer(modifier = Modifier.height(20.dp))
-        
-        // Recommendation
-        RecommendationCard(
-            text = context.getString(R.string.onboarding_limitations_recommendation)
-        )
-        
+        RecommendationCard(text = stringResource(R.string.onboarding_limitations_recommendation))
+
         Spacer(modifier = Modifier.height(40.dp))
-        
-        // Finish Button
+
         Button(
             onClick = onComplete,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(56.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color.White
+                containerColor = MaterialTheme.colorScheme.surface,
+                contentColor = MaterialTheme.colorScheme.primary,
             ),
-            shape = RoundedCornerShape(12.dp)
+            shape = RoundedCornerShape(12.dp),
         ) {
             Text(
-                text = context.getString(R.string.onboarding_finish),
-                fontSize = 16.sp,
+                text = stringResource(R.string.onboarding_finish),
+                style = MaterialTheme.typography.labelLarge,
                 fontWeight = FontWeight.SemiBold,
-                color = Color.Black
             )
         }
-        
+
         Spacer(modifier = Modifier.height(24.dp))
-        
-        // Navigation dots
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            repeat(7) { index ->
-                Box(
-                    modifier = Modifier
-                        .size(8.dp)
-                        .background(
-                            if (index == 6) Color.White else Color.White.copy(alpha = 0.3f),
-                            RoundedCornerShape(4.dp)
-                        )
-                )
-            }
-        }
-        
+        NavigationDots(currentStep = 6)
         Spacer(modifier = Modifier.height(24.dp))
     }
 }
@@ -119,16 +78,15 @@ private fun LimitationCard(text: String) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White.copy(alpha = 0.1f)
+            containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.15f),
         ),
-        shape = RoundedCornerShape(12.dp)
+        shape = RoundedCornerShape(12.dp),
     ) {
         Text(
             text = text,
-            fontSize = 16.sp,
-            color = Color.White,
-            lineHeight = 24.sp,
-            modifier = Modifier.padding(20.dp)
+            style = MaterialTheme.typography.bodyLarge,
+            color = onboardingOnGradient(),
+            modifier = Modifier.padding(20.dp),
         )
     }
 }
@@ -138,28 +96,22 @@ private fun RecommendationCard(text: String) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = Color(0xFF4CAF50).copy(alpha = 0.2f)
+            containerColor = MaterialTheme.colorScheme.secondary.copy(alpha = 0.25f),
         ),
-        shape = RoundedCornerShape(12.dp)
+        shape = RoundedCornerShape(12.dp),
     ) {
-        Column(
-            modifier = Modifier.padding(20.dp)
-        ) {
+        Column(modifier = Modifier.padding(20.dp)) {
             Text(
                 text = text,
-                fontSize = 16.sp,
-                color = Color.White,
-                lineHeight = 24.sp
+                style = MaterialTheme.typography.bodyLarge,
+                color = onboardingOnGradient(),
             )
-            
             Spacer(modifier = Modifier.height(12.dp))
-            
-            // Settings link placeholder
             Text(
-                text = "Settings > Data and storage usage",
-                fontSize = 14.sp,
-                color = Color(0xFF81C784),
-                fontWeight = FontWeight.Medium
+                text = stringResource(R.string.onboarding_limitations_settings_hint),
+                style = MaterialTheme.typography.bodyMedium,
+                color = onboardingMutedOnGradient(),
+                fontWeight = FontWeight.Medium,
             )
         }
     }

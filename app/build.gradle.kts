@@ -7,10 +7,7 @@ plugins {
 
 android {
     namespace = "com.ziaafridi.notifyvault"
-    compileSdk {
-        version = release(36)
-
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.ziaafridi.notifyvault"

@@ -1,15 +1,17 @@
 package com.ziaafridi.notifyvault.settings.components
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -28,32 +30,30 @@ fun TopBarWidget(
     startPadding: Int = 0,
 ) {
     TopAppBar(
-        modifier = Modifier
-            .padding(start = 16.dp),
         title = {
             Text(
-                modifier = Modifier
-                    .padding(start = startPadding.dp),
+                modifier = Modifier.padding(start = startPadding.dp),
                 text = text,
                 fontSize = size.sp,
                 fontWeight = weight,
                 textAlign = alignment,
+                style = MaterialTheme.typography.titleLarge,
             )
         },
         navigationIcon = {
-            // Only show the back button if a callback is provided
             if (onBackClick != null) {
-                IconButton(
-                    modifier = Modifier
-                        .size(20.dp),
-                    onClick = onBackClick
-                ) {
+                IconButton(onClick = onBackClick) {
                     Icon(
-                        painter = painterResource(R.drawable.back),
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = stringResource(R.string.navigate_back_des),
+                        tint = MaterialTheme.colorScheme.onSurface,
                     )
                 }
             }
-        }
+        },
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+            titleContentColor = MaterialTheme.colorScheme.onSurface,
+        ),
     )
 }

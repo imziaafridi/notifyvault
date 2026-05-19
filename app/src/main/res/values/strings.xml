@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">notifyvault</string>
+    <string name="app_name">Notify Vault</string>
+    <string name="support_email">imziaafridi@gmail.com</string>
+    <string name="notification_listener_name">Notify Vault · WhatsApp</string>
 
     <!-- Onboarding Strings -->
     <string name="onboarding_terms_title">Terms &amp; Conditions</string>
     <string name="onboarding_terms_description">Please read and accept our terms and conditions to continue using the app.</string>
-    <string name="onboarding_terms_service">📄 Terms of Service</string>
-    <string name="onboarding_privacy_policy">🔒 Privacy Policy</string>
+    <string name="onboarding_terms_service">Terms of Service</string>
+    <string name="onboarding_privacy_policy">Privacy Policy</string>
     <string name="onboarding_accept_continue">Accept &amp; Continue</string>
 
     <string name="onboarding_permissions_title">Enable Permissions</string>
@@ -14,17 +16,17 @@
     <string name="onboarding_notification_description">Required to read WhatsApp notifications and recover deleted messages</string>
     <string name="onboarding_auto_start">Auto Start</string>
     <string name="onboarding_auto_start_description">Allows the app to run in background and capture notifications</string>
-    <string name="onboarding_enabled">✅ Enabled</string>
+    <string name="onboarding_enabled">Enabled</string>
     <string name="onboarding_enable">Enable</string>
     <string name="onboarding_continue">Continue</string>
     <string name="onboarding_enable_required_permissions">Enable Required Permissions</string>
 
-    <!-- notifyvault Recovery Screen -->
-    <string name="onboarding_notifyvault_title">How notifyvault Works</string>
+    <!-- How it works (onboarding demo) -->
+    <string name="onboarding_notifyvault_title">How Notify Vault works</string>
     <string name="onboarding_notifyvault_step1">1. Receive a message</string>
     <string name="onboarding_notifyvault_step2">2. The message gets deleted</string>
-    <string name="onboarding_notifyvault_step3">3. notifyvault recovers it</string>
-    <string name="onboarding_notifyvault_notification_title">Allow notifyvault to send you notifications?</string>
+    <string name="onboarding_notifyvault_step3">3. Notify Vault recovers it</string>
+    <string name="onboarding_notifyvault_notification_title">Allow Notify Vault to send you notifications?</string>
     <string name="onboarding_notifyvault_allow">ALLOW</string>
     <string name="onboarding_notifyvault_dont_allow">DON\'T ALLOW</string>
     <string name="onboarding_notifyvault_grant_permission">Grant permission</string>
@@ -34,7 +36,7 @@
     <string name="onboarding_placeholder_user">John Appleseed</string>
     <string name="onboarding_placeholder_message">Pineapple definitely goes on pizza</string>
     <string name="onboarding_notification_suffix"> • 1 new message • now</string>
-    <string name="onboarding_placeholder_notifyvault">notifyvault</string>
+    <string name="onboarding_placeholder_notifyvault">Notify Vault</string>
     <string name="onboarding_time_now"> • now</string>
     <string name="onboarding_recovery_title">John Appleseed has deleted a message</string>
     <string name="onboarding_recovery_message_deleted">This message was deleted</string>
@@ -42,32 +44,33 @@
 
     <!-- Remember Screen -->
     <string name="onboarding_remember_title">Remember!</string>
-    <string name="onboarding_remember_silenced_chat">If you have silenced a chat or you are watching it when the message gets deleted, you will not receive a notification so notifyvault can\'t help in this case!</string>
-    <string name="onboarding_remember_before_install">notifyvault can\'t recover messages that have been deleted before you installed this app!</string>
+    <string name="onboarding_remember_silenced_chat">If you have silenced a chat or you are watching it when the message gets deleted, you will not receive a notification — Notify Vault cannot recover it in that case.</string>
+    <string name="onboarding_remember_before_install">Notify Vault cannot recover messages that were deleted before you installed this app.</string>
     <string name="onboarding_get_started">Get Started</string>
 
     <!-- Media Access Screen -->
     <string name="onboarding_media_title">WhatsApp Media Access</string>
-    <string name="onboarding_media_description">notifyvault needs access to your WhatsApp media folder to recover deleted photos, videos, and other files when messages are received.</string>
-    <string name="onboarding_media_whatsapp_access">WhatsApp Directory Access</string>
-    <string name="onboarding_media_access_description">Allow notifyvault to access WhatsApp\'s media folder to backup and recover deleted media files</string>
+    <string name="onboarding_media_description">Notify Vault needs access to your WhatsApp media folder to recover deleted photos, videos, and other files when messages are received.</string>
+    <string name="onboarding_media_whatsapp_access">WhatsApp directory access</string>
+    <string name="onboarding_media_access_description">Allow Notify Vault to access WhatsApp\'s media folder to back up and recover deleted media files</string>
     <string name="onboarding_media_grant_access">Grant Access</string>
-    <string name="onboarding_media_access_granted">✓ Access Granted</string>
+    <string name="onboarding_media_access_granted">Access granted</string>
     <string name="onboarding_media_continue">Continue</string>
 
     <!-- Privacy Screen -->
-    <string name="onboarding_privacy_title">🔒 Privacy</string>
+    <string name="onboarding_privacy_title">Your privacy</string>
     <string name="onboarding_privacy_description">All your notifications are saved only on your device. Only you can access them!</string>
 
     <!-- Limitations Screen -->
-    <string name="onboarding_limitations_title">⚠️ Limitations</string>
-    <string name="onboarding_limitations_offline">If you are offline, or if you have an unstable connection, received media may be deleted before your phone downloads it, and if that happens, notifyvault may not recover it!</string>
+    <string name="onboarding_limitations_title">Good to know</string>
+    <string name="onboarding_limitations_offline">If you are offline or on an unstable connection, received media may be deleted before your phone downloads it — Notify Vault may not be able to recover it.</string>
     <string name="onboarding_limitations_wifi">If you aren\'t on WiFi, some media may not be downloaded because of your download settings.</string>
-    <string name="onboarding_limitations_recommendation">To increase your chances we highly recommend that you enable automatic download in Settings > Data and storage usage.</string>
+    <string name="onboarding_limitations_recommendation">To increase your chances, enable automatic download in WhatsApp.</string>
+    <string name="onboarding_limitations_settings_hint">WhatsApp → Settings → Storage and data → Media auto-download</string>
     <string name="onboarding_finish">Finish</string>
 
     <!-- Conversation List Screen -->
-    <string name="rwm_disp_name">notifyvault > WhatsApp</string>
+    <string name="notification_access_display_name">Notify Vault · WhatsApp</string>
     <string name="setting_des">️Setting Description</string>
     <string name="media_access_not_granted">Media Access Not Granted</string>
     <string name="granted_media_access">Grant folder access to view WhatsApp media files</string>

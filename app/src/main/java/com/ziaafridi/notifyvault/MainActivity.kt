@@ -42,7 +42,7 @@ import com.ziaafridi.notifyvault.settings.sections.AboutScreen
 import com.ziaafridi.notifyvault.settings.sections.PrivacyPolicyScreen
 import com.ziaafridi.notifyvault.settings.SettingScreen
 import com.ziaafridi.notifyvault.settings.sections.TermsOfUseScreen
-import com.ziaafridi.notifyvault.ui.theme.RevealWhatsappMessagesTheme
+import com.ziaafridi.notifyvault.ui.theme.NotifyVaultTheme
 import android.net.Uri
 
 class MainActivity : ComponentActivity() {
@@ -51,7 +51,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            RevealWhatsappMessagesTheme {
+            NotifyVaultTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -110,7 +110,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    RevealWhatsappMessagesTheme {
+    NotifyVaultTheme {
         Greeting("Android")
     }
 }

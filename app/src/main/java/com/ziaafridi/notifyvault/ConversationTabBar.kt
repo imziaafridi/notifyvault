@@ -44,7 +44,7 @@ import java.util.Date
 import java.util.Locale
 
 @Composable
-fun RWDMTabBar(
+fun ConversationTabBar(
     conversationList: List<RecoveredMessage>,
     mediaList: List<RecoveredMessage>,
     navController: NavHostController,
